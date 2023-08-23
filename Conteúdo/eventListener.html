@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <button type="button" id="myButton">Clique em mim!</button>
+
+        <!-- 
+            EventListener requer que os elementos HTML já tenham carregado!
+        -->
+        <script type="text/javascript">
+            document.getElementById("myButton").addEventListener("click", () => {
+                alert("Botão foi clicado!");
+            })
+        </script>
+    </body>
+</html>
+
+<!--
+    Uma opção seria: 
+
+    Usar um addEventListener("DOMContentLoaded, ...")
+        - Um evento que é "disparado" somente ao fim do carregamento do HTML
+
+        - Colocar no head:
+            <script defer src="..."> </script>
+-->

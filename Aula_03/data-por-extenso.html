@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+
+    <br><br>
+
+    <button type="button" id="myButton">Clique em mim!</button>
+
+    <script type="text/javascript">
+        /*  
+        
+        Solução mais elegante e simples para o problema:
+
+        const option = {
+            year: 'numeric',
+            month: ('long' || 'short' || 'numeric'),
+            weekday: ('long' || 'short'),
+            day: 'numeric'
+        }
+        const locale = 'pt-br'
+
+        new Date().toLocaleDateString(locale, option); 
+        
+        */
+
+        let globalDate = new Date;
+
+        document.getElementById("myButton").addEventListener("click", () => {
+            alert(`${ajustarDiaSemana()}, ${globalDate.getDate()} de ${ajustarMes()} de ${globalDate.getFullYear()}`);
+        })
+
+        function ajustarDiaSemana() {
+            let dict = {
+                0 : "Domingo",
+                1 : "Segunda-Feira",
+                2 : "Terça-Feira",
+                3 : "Quarta-Feira",
+                5 : "Quinta-Feira",
+                6 : "Sabado"
+            }
+
+            return dict[ globalDate.getDay() ];
+        }
+
+        function ajustarMes() {
+            let dict = {
+                0 : "Janeiro",
+                1 : "Fevereiro",
+                2 : "Março",
+                3 : "Abril",
+                4 : "Maio",
+                5 : "Junho",
+                6 : "Julho",
+                7 : "Agosto",
+                8 : "Setembro",
+                9 : "Outubro",
+                10 : "Novembro",
+                11 : "Dezembro"
+            }
+
+            return dict[ globalDate.getMonth() ];
+        }
+    </script>
+</body>
+</html>

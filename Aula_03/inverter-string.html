@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+
+    <br><br>
+
+    <label for="myInput">Informe uma frase ou palavra!</label>
+
+    <br><br>
+
+    <input type="text" id="myInput">
+
+    <br><br>
+
+    <button id="myButton" onclick="myFunction()">Clique em mim!</button>
+
+    <script type="text/javascript">
+        function myFunction() {
+            let userInput = document.getElementById("myInput").value;
+
+            let  newString = "";
+
+            // Loop decremental
+            for (let i = userInput.length - 1; i >= 0; i--) {
+                newString += userInput[i];
+            }
+
+            newString == userInput? alert("É palindromo!") : alert("Não é palindromo!");
+        }
+    </script>
+</body>
+</html>
