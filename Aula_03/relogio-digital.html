@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 </head>
-<body onload="startTime()">
+<body onload="iniciarRelogio()">
     <a href="index.html">Voltar</a>
 
     <br><br>
@@ -11,12 +11,12 @@
     <p id="relogio"></p>
 
     <script type="text/javascript">
-        function startTime() {
+        function iniciarRelogio() {
             const date = new Date();
 
             document.getElementById("relogio").innerHTML = date.toLocaleTimeString();
 
-            setTimeout(function() {startTime()}, 1000);
+            setTimeout(function() {iniciarRelogio()}, 1000);
         }
     </script>
 </body>
