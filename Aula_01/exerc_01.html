@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="index.html">Voltar</a>
+    
+        <br><br>
+    
+        <script type="text/javascript">
+            function getDataType(data) {
+                return typeof data;
+            }
+    
+            let dado = prompt("Digite algo", "");
+    
+            if (confirm("Deseja ver o tipo do dado?")) {
+                let tipoDado = getDataType(dado);
+                alert("O dado é do tipo: " + tipoDado);
+            }
+        </script>
+    </body>
+</html>

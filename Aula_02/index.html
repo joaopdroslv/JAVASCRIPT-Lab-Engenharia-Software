@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <a href="../index.html">Voltar</a>
+
+    <br><br>
+
+    <label for="dado">Informe uma fruta:</label> </br>
+    <input id="input_usuario" type="text" placeholder="Digite aqui..."> </br>
+    <button onclick="myFunction()">Add</button>
+
+    <!--Criando a lista que vou editar-->
+    <ul id="myUl"></ul>
+
+    <script>
+        let arrayDados = [];
+
+        function myFunction() {
+            let dado = document.getElementById("input_usuario").value;
+            let confirmacao = confirm("Tem certeza?");
+
+            if (confirmacao) {
+                arrayDados.push(dado);
+
+                //organizando o array
+                arrayDados.sort();
+
+                //precisarei limpar a UL antes de exibir
+                let myUl = document.getElementById("myUl");
+                myUl.innerHTML = "";
+
+                for (let item in arrayDados) {
+                    //criando elemento "li"
+                    let listItem = document.createElement("li");
+
+                    //definindo conteúdo do elemento
+                    let listText = document.createTextNode(arrayDados[item]);
+
+                    //atribuindo o conteúdo ao elemento "li" criado
+                    listItem.appendChild(listText);
+
+                    document.getElementById("myUl").appendChild(listItem);
+                }
+
+                document.getElementById("input_usuario").value = "";
+            } else alert("Necessário confirmar!");
+
+        }
+    </script>
+</body>
+</html>
